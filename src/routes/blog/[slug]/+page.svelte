@@ -23,6 +23,30 @@
 
 </script>
 
+<svelte:head>
+    <title>{data.post.title}</title>
+    <meta name="keywords" content="{data.post.seo.keywords.toString()}">
+    <meta name="author" content="Node Ronin" />
+    <meta name="description" content="{data.post.seo.metaDescription}">
+
+    {#each data.post.seo.metaSocial as metaSocial }
+        {#if metaSocial.socialNetwork == "Facebook"}
+            <meta property="og:description" content="{metaSocial.description}"/>
+            <meta property="og:title" content="{metaSocial.title}" />
+            <meta property="og:image" content="{metaSocial.image.url}"/>
+            <meta property="og:url" content="" />
+        {:else}
+            <meta name="twitter:card" content="summary_large_image">
+            <!-- <meta name="twitter:creator" content="@bhupeshimself"> -->
+            <meta name="twitter:title" content="{metaSocial.title}">
+            <meta name="twitter:image" content="{metaSocial.image.url}">
+            <!-- <meta name="twitter:site" content="@bhupeshimself"> -->
+            <meta name="twitter:description" content="{metaSocial.description}">
+        {/if}
+    {/each}
+
+</svelte:head>
+
 {#if data.post}
     <div in:fly out:fade class="col-span-4 lg:col-span-5">
         <div class="flex justify-between items-center pt-6">
