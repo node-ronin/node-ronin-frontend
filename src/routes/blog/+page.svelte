@@ -1,12 +1,13 @@
 <script lang="ts">
-  import Tags from '../../lib/components/Tags.svelte';
 
-  import Category from '../../lib/components/Category.svelte';
+    import { fade, fly } from 'svelte/transition';
+    import Category from '$lib/components/Category.svelte'
+    import Tags from '$lib/components/Tags.svelte'
 
 	import { parseDate } from '$lib//utils';
-    import type {PageData} from './$types'
+	import type { Posts } from '$lib//types/posts';
     
-    export let data: PageData;
+    export let data: Posts;
 </script>
 
 <div class="grid grid-cols-12 gap-8 mb-8 h-96 ">
@@ -32,20 +33,20 @@
 {#if data.posts}
 <div class="grid grid-cols-12 gap-8">
     <div class="col-span-8">
-        {#each data.posts.data as post}
-            <div style="border-left-color: {post.attributes.category.data.attributes.color}" class="bg-base-100 px-8 mb-8 pb-8 border-l-8 border-l-[{post.attributes.category.data.attributes.color}">
+        {#each data.posts as post}
+            <div in:fly out:fade style="border-left-color: {post.category.color.hex}" class="bg-base-100 px-8 mb-8 pb-8 border-l-8 border-l-[{post.category.color.hex}">
                 <div class="flex justify-between pt-8 items-center">
-                    <span class="text-sm font-semibold">{parseDate(post.attributes.publishedAt)}</span>
-                    <span class="text-sm text px-2 py-1 rounded" style="background-color: {post.attributes.category.data.attributes.color}">{post.attributes.category.data.attributes.name}</span>
+                    <span class="text-sm font-semibold">{parseDate(post.publishedAt)}</span>
+                    <span class="text-sm text px-2 py-1 rounded" style="background-color: {post.category.color.hex}">{post.category.title}</span>
                 </div>
                 <div class="divider"></div>
                 <div class="">
                     <h2 class="text-3xl leading-10 md:text-4xl md:leading-46px my-8">
-                        <a class="text-secondary font-black hover:underline" href="/blog/{post.attributes.slug}" title="">
-                            {post.attributes.title}
+                        <a class="text-secondary font-black hover:underline" href="/blog/{post.slug}" title="">
+                            {post.title}
                         </a>
                     </h2>
-                    {post.attributes.description}
+                    {post.shortDescription}
                 </div>
             </div>
         {/each}

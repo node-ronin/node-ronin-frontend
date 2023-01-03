@@ -1,29 +1,60 @@
 import 'dotenv/config'
-import axios from 'axios'
 import type { PageServerLoad } from './$types';
-import type { Post } from '$lib//types/post';
-import type { Category } from '$lib//types/category';
-import type { Tags } from '$lib//types/tag';
+import {request, gql} from 'graphql-request'
+import type { Post } from '$lib//types/postDetail';
 
 export const load: PageServerLoad = async({params}) => {
-    const slug = await axios.get(`${process.env.API_ENDPOINT}/posts/slug/${params.slug}`)
-    try {
-        console.log(slug.data.data.id)
-        const post = await axios.get(`${process.env.API_ENDPOINT}/posts/${slug.data.data.id}?populate=deep`)
-        const cats = await axios.get(`${process.env.API_ENDPOINT}/categories`)
-        const tags = await axios.get(`${process.env.API_ENDPOINT}/tags`)
-        
-        const post_results: Post.SinglePost = post.data
-        const cat_results: Category.Categories = cats.data
-        const tag_results: Tags.Tags = tags.data
-
-        return {
-            post: post_results,
-            categories: cat_results,
-            tags: tag_results
+    const query = gql`
+    query Posts {
+        post(where: {slug: "${params.slug}"}) {
+          id
+          slug
+          title
+          createdAt
+          body {
+            html
+          }
+          tags {
+            title
+            slug
+          }
+          category {
+            slug
+            title
+          }
+          seo {
+            keywords
+            metaDescription
+            canonicalUrl
+            metaRobots
+            metaSocial {
+              ... on SocialNetwork {
+                description
+                socialNetwork
+                title
+                image {
+                  url
+                }
+              }
+            }
+            metaTitle
+            metaViewport
+            structuredData
+          }
         }
-        
-    } catch (error) {
-        console.log(error)
-    }
+        tags {
+          slug
+          id
+          title
+        }
+        categories {
+          id
+          slug
+          title
+        }
+      }
+    `
+
+    const data: Post = await request(process.env.API_ENDPOINT, query)
+    return data
 }

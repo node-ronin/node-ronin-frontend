@@ -1,13 +1,12 @@
 <script lang="ts">
-    import type {PageData} from './$types'
+    import { fade, fly } from 'svelte/transition';
     import Toc from 'svelte-toc'
-	import { afterUpdate, onMount, beforeUpdate } from 'svelte';
+	import { onMount} from 'svelte';
     import { parseDate } from '$lib//utils';
     import Giscus from '@giscus/svelte'
-    import Category from '$lib//components/Category.svelte';
-    import Tags from '$lib//components/Tags.svelte';
+	import type { Post } from '$lib//types/postDetail';
 
-    export let data: PageData;
+    export let data: Post;
 
     onMount(() => {
         (function() { // DON'T EDIT BELOW THIS LINE
@@ -25,24 +24,23 @@
 </script>
 
 {#if data.post}
-    <div class="col-span-4 lg:col-span-5">
+    <div in:fly out:fade class="col-span-4 lg:col-span-5">
         <div class="flex justify-between items-center pt-6">
-            <div class="text-sm font-semibold">{parseDate(data.post.data.attributes.publishedAt)}</div>
-            <div class="badge badge-[{data.post.data.attributes.category.data.attributes.color}]">{data.post.data.attributes.category.data.attributes.name}</div>
+            <div class="text-sm font-semibold">{parseDate(data.post.createdAt)}</div>
+            <div class="badge badge-[{data.post.category.color}]">{data.post.title}</div>
         </div>
         <div class="divider"></div> 
         <div class="mb-10">
-            <div class="text-3xl leading-10 md:text-42px md:leading-62px text-secondary font-black my-6.5  mb-2">{data.post.data.attributes.title}</div>
+            <div class="text-3xl leading-10 md:text-42px md:leading-62px text-secondary font-black my-6.5  mb-2">{data.post.title}</div>
             <div class="flex text-xs">                
-                {#each data.post.data.attributes.tags.data as tag}
-                    <div class="badge">{tag.attributes.name}</div>
+                {#each data.post.tags as tag}
+                    <div class="badge">{tag.title}</div>
                 {/each}
             </div>
         </div>
         <div>
             <div class="prose max-w-none prose-img:mx-auto">
-                        
-                {@html data.post.data.attributes.body
+                {@html data.post.body.html
                     .replaceAll('<code>','<code class="">')
                     .replaceAll("<pre>","<div class='relative'><pre class='scrollbar-thin scrollbar-thumb-neutral-focus scrollbar-track-neutral-content'>")
                     .replaceAll("</pre>","</pre></div>")
