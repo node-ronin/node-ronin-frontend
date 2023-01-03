@@ -1,10 +1,10 @@
 <script lang="ts">
     import { fade, fly } from 'svelte/transition';
-    import Toc from 'svelte-toc'
 	import { onMount} from 'svelte';
     import { parseDate } from '$lib//utils';
     import Giscus from '@giscus/svelte'
 	import type { Post } from '$lib//types/postDetail';
+    import Toc from 'svelte-toc'
 
     export let data: Post;
 
@@ -47,11 +47,16 @@
 
 </svelte:head>
 
+<div>
+    <Toc titleTag="strong" />
+</div>
+
 {#if data.post}
+<div class="col-span-3 shadow-block bg-base-100 px-8">
     <div in:fly out:fade class="col-span-4 lg:col-span-5">
         <div class="flex justify-between items-center pt-6">
             <div class="text-sm font-semibold">{parseDate(data.post.createdAt)}</div>
-            <div class="badge badge-[{data.post.category.color}]">{data.post.title}</div>
+            <div class="badge badge-[{data.post.category.color}]"><a href="/blog/category/{data.post.category.slug}">{data.post.category.title}</a></div>
         </div>
         <div class="divider"></div> 
         <div class="mb-10">
@@ -72,9 +77,6 @@
             </div>
         </div>
     </div>
-    <div class="col-span-3 lg:col-span-2 p-5 md:p-0">
-        <Toc titleTag="strong" />
-    </div>
 
     <div class="col-span-5">
         <Giscus 
@@ -91,4 +93,5 @@
         lang="en"
         />
     </div>
+</div>
 {/if}

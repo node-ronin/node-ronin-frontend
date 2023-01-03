@@ -6,6 +6,7 @@
 
 	import { parseDate } from '$lib//utils';
 	import type { Posts } from '$lib//types/posts';
+	import { goto } from '$app/navigation';
     
     export let data: Posts;
 </script>
@@ -34,10 +35,10 @@
 <div class="grid grid-cols-12 gap-8">
     <div class="col-span-8">
         {#each data.posts as post}
-            <div in:fly out:fade style="border-left-color: {post.category.color.hex}" class="bg-base-100 px-8 mb-8 pb-8 border-l-8 border-l-[{post.category.color.hex}">
+            <div style="border-left-color: {post.category.color.hex}" class="bg-base-100 px-8 mb-8 pb-8 border-l-8 border-l-[{post.category.color.hex}">
                 <div class="flex justify-between pt-8 items-center">
                     <span class="text-sm font-semibold">{parseDate(post.publishedAt)}</span>
-                    <span class="text-sm text px-2 py-1 rounded" style="background-color: {post.category.color.hex}">{post.category.title}</span>
+                    <span on:click={goto(`/blog/category/${post.category.slug}`)} class="text-sm text px-2 py-1 rounded hover:cursor-pointer hover:bg-neutral">{post.category.title}</span>
                 </div>
                 <div class="divider"></div>
                 <div class="">
