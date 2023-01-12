@@ -1,7 +1,9 @@
+
+
 <section class=" dark:bg-gray-900">
     <div class="container px-6 py-10 mx-auto">
         <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
-            <img class="object-cover h-auto lg:mx-6 lg:w-1/2 rounded-xl " src="src/routes/assets/Team Work_Monochromatic.png"alt="">
+            <img class="object-cover h-auto lg:mx-6 lg:w-1/2 rounded-xl " src="/assets/Team Work_Monochromatic.png" alt="node-ronin">
 
             <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
                 <h2 class="text-3xl font-bold sm:text-4xl">Welcome to Node Ronin</h2>
@@ -17,7 +19,7 @@
 <section class=" dark:bg-gray-900">
     <div class="container px-6 py-10 mx-auto">
         <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
-            <img class="object-cover h-auto lg:mx-6 lg:w-1/2 rounded-xl lg:order-last" src="src/routes/assets/Ethereum_Monochromatic.png"alt="">
+            <img class="object-cover h-auto lg:mx-6 lg:w-1/2 rounded-xl lg:order-last" src="/assets/Ethereum_Monochromatic.png"alt="validator-node">
 
             <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
                 <h2 class="text-3xl font-bold sm:text-4xl">​What is a validator node?</h2>
@@ -30,7 +32,7 @@
   <section class=" dark:bg-gray-900">
     <div class="container px-6 py-10 mx-auto">
         <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
-            <img class="object-cover h-auto lg:mx-6 lg:w-1/2 rounded-xl " src="src/routes/assets/Team meeting_Monochromatic.png"alt="">
+            <img class="object-cover h-auto lg:mx-6 lg:w-1/2 rounded-xl " src="/assets/Team meeting_Monochromatic.png" alt="comm-review">
 
             <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
                 <h2 class="text-3xl font-bold sm:text-4xl">​Community Overview</h2>
@@ -44,7 +46,7 @@
 <section class=" dark:bg-gray-900">
     <div class="container px-6 py-10 mx-auto">
         <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
-            <img class="object-cover h-auto lg:mx-6 lg:w-1/2 rounded-xl lg:order-last" src="src/routes/assets/Team meeting_Two Color.png"alt="">
+            <img class="object-cover h-auto lg:mx-6 lg:w-1/2 rounded-xl lg:order-last" src="/assets/Team meeting_Two Color.png" alt="edu-resources">
 
             <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
               
@@ -91,7 +93,7 @@
                 <span class="p-5 rounded-full bg-slate-400 shadow-lg shadow-blue-500/50">
                     <!-- svelte-ignore a11y-missing-attribute -->
                     <a href="https://google.com" target="_blank"  >
-                    <img src="https://inery.io/logos/inery_logo_v3.png" width="126" >
+                    <img src="https://inery.io/logos/inery_logo_v3.png" width="126" alt="inery-logo">
                 </a>
                 </span>
                 <p class="text-xl font-medium text-slate-700 mt-3">Inery</p>
@@ -141,7 +143,7 @@
     <div class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r md:lg:xl:border-b hover:bg-slate-50 cursor-pointer border-transparent">
         <span class="p-5 rounded-full  bg-slate-400 shadow-lg shadow-blue-500/50">
             
-          <img src="src/routes/assets/wormholes.png" alt=""  class="h-[45px]">
+          <img src="/assets/wormholes.png" alt="wormholes"  class="h-[45px]">
 
         </span>
         <p class="text-xl font-medium text-slate-700 mt-3">Wormholes</p>
