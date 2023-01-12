@@ -90,7 +90,7 @@
         
             <div class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r md:lg:xl:border-b hover:bg-slate-50 cursor-pointer border-transparent">
                 
-                <span class="p-5 rounded-full bg-slate-400 shadow-lg shadow-blue-500/50">
+                <span class="p-5 rounded-full bg-sky-400 shadow-lg shadow-blue-500/50">
                     <!-- svelte-ignore a11y-missing-attribute -->
                     <a href="https://google.com" target="_blank"  >
                     <img src="https://inery.io/logos/inery_logo_v3.png" width="126" alt="inery-logo">
@@ -104,7 +104,7 @@
 
     <a href="https://google.com" target="_blank" rel="noreferrer">
         <div class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r md:lg:xl:border-b hover:bg-slate-50 cursor-pointer border-transparent">
-            <span class="p-5 rounded-full  bg-slate-400 shadow-lg shadow-blue-500/50">
+            <span class="p-5 rounded-full  bg-sky-400 shadow-lg shadow-blue-500/50">
                 
                 <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="color-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.922 35.38" preserveAspectRatio="xMinYMin meet" width="40" height="36">
                     <path d="M80.124,79.241c.2-.253.395-.511.582-.772l3.54,2.161H89.2l-7.138-4.359a17.947,17.947,0,0,0,1.173-2.779,19.691,19.691,0,0,0,1.014-6.1,19.14,19.14,0,0,0-1.039-6.129,18.65,18.65,0,0,0-3.136-5.72,15.436,15.436,0,0,0-5.334-4.217A17.174,17.174,0,0,0,67.07,49.73a16.266,16.266,0,0,0-7.408,1.593,15.751,15.751,0,0,0-5.26,4.2,17.848,17.848,0,0,0-3.11,5.72,19.771,19.771,0,0,0-1.012,6.154,21.211,21.211,0,0,0,.959,6.276,17.259,17.259,0,0,0,3.009,5.718,14.608,14.608,0,0,0,5.334,4.125,18.337,18.337,0,0,0,7.867,1.545,16.235,16.235,0,0,0,7.433-1.593c.308-.156.605-.322.9-.494l3.5,2.138h4.955l-6.171-3.763A15.32,15.32,0,0,0,80.124,79.241ZM69.743,76.259H64.787l7.964,4.853c-.09.062-.177.126-.269.177A9.184,9.184,0,0,1,67.4,82.666,10.313,10.313,0,0,1,62.03,81.33a10.727,10.727,0,0,1-3.658-3.561,16.6,16.6,0,0,1-2.06-4.955,22.846,22.846,0,0,1-.658-5.426,21.375,21.375,0,0,1,.69-5.324,17.047,17.047,0,0,1,2.124-4.947,11.661,11.661,0,0,1,3.6-3.623,9.215,9.215,0,0,1,5.062-1.377,9.707,9.707,0,0,1,5.242,1.377,11.387,11.387,0,0,1,3.644,3.649A17.757,17.757,0,0,1,78.16,62.1a20.529,20.529,0,0,1,.708,5.309,21.238,21.238,0,0,1-.692,5.281c-.092.354-.195.708-.3,1.041L74.7,71.8H69.744l7.145,4.352a16.846,16.846,0,0,1-.839,1.5,12.606,12.606,0,0,1-1.274,1.687Z" transform="translate(-50.28 -49.73)" fill="#FFFFFF" fill-rule="evenodd"></path>
@@ -118,7 +118,7 @@
    
    <a href="https://google.com" target="_blank" rel="noreferrer">
     <div class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r md:lg:xl:border-b hover:bg-slate-50 cursor-pointer border-transparent">
-        <span class="p-5 rounded-full  bg-slate-400 shadow-lg shadow-blue-500/50">
+        <span class="p-5 rounded-full  bg-sky-400 shadow-lg shadow-blue-500/50">
             
             <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="180" height="31" viewBox="0 0 180 31" fill="none">
                 <path d="M50.4982 12.3267C50.5033 12.0466 50.6169 11.7795 50.8149 11.5814C51.013 11.3834 51.2801 11.2698 51.5602 11.2647H51.8052C52.0082 11.2653 52.2077 11.3182 52.3843 11.4184C52.5608 11.5186 52.7086 11.6627 52.8132 11.8367L59.6202 22.0747L66.4272 11.8367C66.5298 11.6611 66.677 11.5158 66.8538 11.4154C67.0306 11.3149 67.2308 11.2629 67.4342 11.2647H67.6792C67.9593 11.2696 68.2266 11.383 68.4247 11.5811C68.6229 11.7793 68.7363 12.0466 68.7412 12.3267V29.4547C68.7418 29.739 68.6309 30.0123 68.4324 30.2159C68.2339 30.4195 67.9635 30.5372 67.6792 30.5437C67.3921 30.5383 67.1182 30.4218 66.9151 30.2188C66.712 30.0157 66.5956 29.7418 66.5902 29.4547V15.2407L60.4902 24.1997C60.401 24.3613 60.2709 24.4966 60.113 24.5921C59.955 24.6876 59.7747 24.7398 59.5902 24.7437C59.4022 24.7397 59.2184 24.6876 59.0563 24.5924C58.8942 24.4971 58.7592 24.3619 58.6642 24.1997L52.5922 15.2687V29.4817C52.5922 29.7602 52.4816 30.0272 52.2847 30.2242C52.0877 30.4211 51.8207 30.5317 51.5422 30.5317C51.2637 30.5317 50.9966 30.4211 50.7997 30.2242C50.6028 30.0272 50.4922 29.7602 50.4922 29.4817L50.4982 12.3267Z" fill="#16181C"/>
@@ -141,7 +141,7 @@
 </a>
 <a href="https://google.com" target="_blank" rel="noreferrer">
     <div class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r md:lg:xl:border-b hover:bg-slate-50 cursor-pointer border-transparent">
-        <span class="p-5 rounded-full  bg-slate-400 shadow-lg shadow-blue-500/50">
+        <span class="p-5 rounded-full  bg-sky-400 shadow-lg shadow-blue-500/50">
             
           <img src="/assets/wormholes.png" alt="wormholes"  class="h-[45px]">
 
