@@ -12,6 +12,6 @@
 </script>
 <Navigation/>
 
-<div class="pt-4 bg-base-200">
+<div class=" pt-4 bg-white">
     <slot />
 </div>
