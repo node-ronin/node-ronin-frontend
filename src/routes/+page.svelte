@@ -1,3 +1,10 @@
+<script lang="ts">
+    import type { Home } from '$lib/types/posts'
+    import Transition from "$lib//components/Transition.svelte";
+        
+    export let data: Home;
+</script>
+<Transition key="section-1">
 <section class=" bg-base-200">
 	<div class="container px-6 py-10 mx-auto">
 		<div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
@@ -132,14 +139,17 @@
 			operators.
 		</p>
 	</div>
-	<div class="grid gap-4 grid-cols-6">
-        <div class="w-full flex justify-center items-center flex-col" >
-            <span class="p-5 rounded-full bg-info">
-                <a href="https://google.com" target="_blank">
-                    <img src="https://inery.io/logos/inery_logo_v3.png" width="126" alt="inery-logo" />
-                </a>
-            </span>
-            <p class="text-lg font-semibold">Inery</p>
-        </div>
+	<div class="grid gap-2 grid-cols-5 pb-4">
+        {#each data.homes as data}
+            <div class="w-full flex justify-center items-center flex-col" >
+                <span class="p-5 rounded-full bg-info">
+                    <a href="https://google.com" target="_blank">
+                        <img src="{data.image.url}" width="126" alt="inery-logo" class="w-full h-8"/>
+                    </a>
+                </span>
+                <p class="text-lg font-semibold">{data.title}</p>
+            </div>
+        {/each}
 	</div>
 </section>
+</Transition>
