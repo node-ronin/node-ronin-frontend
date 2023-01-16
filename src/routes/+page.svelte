@@ -140,7 +140,7 @@
 				operators.
 			</p>
 		</div>
-		<div class="grid gap-2 grid-cols-5 pb-4">
+		<div class="grid gap-2 grid-cols-2 md:grid-cols-5 pb-4">
 			{#each data.homes as data}
 				<div class="w-full flex justify-center items-center flex-col">
 					<span class="p-5 rounded-full bg-info">

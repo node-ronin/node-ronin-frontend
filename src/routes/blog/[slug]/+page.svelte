@@ -53,7 +53,7 @@
 </div>
 
 {#if data.post}
-	<div class="col-span-3 shadow-block bg-base-100 px-8">
+	<div class="col-span-3 shadow-block bg-base-100 px-4 md:px-8">
 		<div in:fly={{ y: 100, duration: 500 }} out:fade class="col-span-4 lg:col-span-5">
 			<div class="flex justify-between items-center pt-6">
 				<div class="text-sm font-semibold">{parseDate(data.post.createdAt)}</div>
