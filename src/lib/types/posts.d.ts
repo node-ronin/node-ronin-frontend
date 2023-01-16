@@ -1,3 +1,14 @@
+export interface Home{
+    homes: HomeData[];
+}
+
+export interface HomeData{
+    title: string;
+    image: {
+        url: string
+    }
+}
+
 export interface Posts {
     posts:      Post[];
     tags:       Tag[];

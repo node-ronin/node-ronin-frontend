@@ -1,10 +1,10 @@
-import 'dotenv/config'
+import 'dotenv/config';
 import type { PageServerLoad } from './$types';
-import {request, gql} from 'graphql-request'
+import { request, gql } from 'graphql-request';
 import type { CategoryDetail } from '$lib//types/categoryDetail';
 
-export const load: PageServerLoad = async({params}) => {
-    const query = gql`
+export const load: PageServerLoad = async ({ params }) => {
+	const query = gql`
           query Category {
             category(where: {slug: "${params.slug_category}"}) {
               slug
@@ -17,7 +17,7 @@ export const load: PageServerLoad = async({params}) => {
               title
             }
           }
-    `
-    const data: CategoryDetail = await request(process.env.API_ENDPOINT, query)
-    return data
-}
+    `;
+	const data: CategoryDetail = await request(process.env.API_ENDPOINT, query);
+	return data;
+};
