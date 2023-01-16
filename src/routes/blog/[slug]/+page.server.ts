@@ -1,10 +1,10 @@
-import 'dotenv/config'
+import 'dotenv/config';
 import type { PageServerLoad } from './$types';
-import {request, gql} from 'graphql-request'
+import { request, gql } from 'graphql-request';
 import type { Post } from '$lib//types/postDetail';
 
-export const load: PageServerLoad = async({params}) => {
-    const query = gql`
+export const load: PageServerLoad = async ({ params }) => {
+	const query = gql`
     query Posts {
         post(where: {slug: "${params.slug}"}) {
           id
@@ -53,8 +53,8 @@ export const load: PageServerLoad = async({params}) => {
           title
         }
       }
-    `
+    `;
 
-    const data: Post = await request(process.env.API_ENDPOINT, query)
-    return data
-}
+	const data: Post = await request(process.env.API_ENDPOINT, query);
+	return data;
+};

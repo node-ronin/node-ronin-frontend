@@ -1,3 +1,3 @@
 <div class="container min-h-screen">
-<slot></slot>
+	<slot />
 </div>
