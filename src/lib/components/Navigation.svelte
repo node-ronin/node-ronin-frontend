@@ -1,13 +1,27 @@
 <script>
+	import { page } from '$app/stores';
 	import ThemeChanger from './ThemeChanger.svelte';
-</script>
+	import { list_menu } from '$lib/config';
 
+</script>
 
 <div class="container mx-auto border-b border-base-300">
 	<nav class="px-2 my-2">
 		<div class="container mx-auto flex flex-wrap items-center justify-between">
+			<label for="side-menu" class="md:hidden swap swap-rotate">
+  
+				<!-- this hidden checkbox controls the state -->
+				<input type="checkbox" />
+				
+				<!-- hamburger icon -->
+				<svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+				
+				<!-- close icon -->
+				<svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+				
+			  </label>
 			<a href="/" class="flex">
-				<img src="/assets/logo2.png" alt="logo" class="h-8 mr-3" />
+				<img src="/assets/node-ronin-wide-logo.png" alt="logo" class="h-10 mr-3" />
 			</a>
 			<div class="flex md:order-2">
 				<div class="relative mr-3 md:mr-0 hidden md:block">
@@ -34,71 +48,21 @@
 
 				<ThemeChanger />
 
-				<button
-					data-collapse-toggle="mobile-menu-3"
-					type="button"
-					class="md:hidden text-base-100 hover:text-base-100 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
-					aria-controls="mobile-menu-3"
-					aria-expanded="false"
-				>
-					<span class="sr-only">Open main menu</span>
-					<svg
-						class="w-6 h-6"
-						fill="currentColor"
-						viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg"
-						><path
-							fill-rule="evenodd"
-							d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-							clip-rule="evenodd"
-						/></svg
-					>
-					<svg
-						class="hidden w-6 h-6"
-						fill="currentColor"
-						viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg"
-						><path
-							fill-rule="evenodd"
-							d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-							clip-rule="evenodd"
-						/></svg
-					>
-				</button>
 			</div>
 			<div
 				class="hidden md:flex justify-between items-center w-full md:w-auto md:order-1"
 				id="mobile-menu-3"
 			>
 				<ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
-					<li>
-						<a
-							href="/"
-							class="text-secondary md:bg-transparent block pl-3 pr-4 py-2 md:p-0 rounded"
-							aria-current="page">Home</a
-						>
-					</li>
-					<li>
-						<a
-							href="/blog"
-							class="hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-secondary md:p-0"
-							>Blog</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							class=" hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-secondary md:p-0"
-							>About</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							class=" hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-secondary md:p-0"
-							>Services</a
-						>
-					</li>
+					{#each list_menu as menu}
+						<li>
+							<a
+								href="{menu.link}"
+								class={$page.url.pathname == menu.link ? "text-secondary md:bg-transparent block pl-3 pr-4 py-2 md:p-0 rounded" : "hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-secondary md:p-0"}
+								aria-current="page">{menu.title}</a
+							>
+						</li>
+					{/each}
 				</ul>
 			</div>
 		</div>
