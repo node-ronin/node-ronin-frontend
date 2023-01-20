@@ -11,21 +11,9 @@
 	export let data: Posts;
 </script>
 
-<!-- <div class="grid grid-cols-4 gap-4 mb-4 h-96 ">
-    <div class="col-span-2 p-2 bg-base-100 shadow-sm">
-        <div class="w-full h-full bg-accent"></div>
-    </div>
-    <div class="col-span-2 p-2 bg-base-100 shadow-sm">
-        <div class="w-full h-full bg-accent"></div>
-    </div>
-</div>
-<div class="grid grid-cols-12 gap-4 h-64 mb-4">
-    {#each Array(3) as _, i}
-        <div class="col-span-4 p-2 bg-base-100 shadow-sm rounded-lg overflow-hidden " >
-            <div class="w-full h-full bg-accent"></div>
-        </div>
-    {/each}
-</div> -->
+<svelte:head>
+	<title>Node Ronin | Blog</title>
+</svelte:head>
 
 <div class="columns-2 md:columns-3 gap-2">
 	{#each data.posts as post, i}

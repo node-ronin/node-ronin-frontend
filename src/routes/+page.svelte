@@ -5,6 +5,10 @@
 	export let data: Home;
 </script>
 
+<svelte:head>
+	<title>Node Ronin</title>
+</svelte:head>
+
 <Transition key="section-1">
 	<section class=" bg-base-200">
 		<div class="container px-6 py-10 mx-auto">
