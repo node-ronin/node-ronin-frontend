@@ -7,7 +7,7 @@
 	<nav class="px-2 my-2">
 		<div class="container mx-auto flex flex-wrap items-center justify-between">
 			<a href="/" class="flex">
-				<img src="/assets/logo2.png" alt="logo" class="h-8 mr-3" />
+				<img src="/assets/node-ronin-wide-logo.png" alt="logo" class="h-10 mr-3" />
 			</a>
 			<div class="flex md:order-2">
 				<div class="relative mr-3 md:mr-0 hidden md:block">
