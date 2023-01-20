@@ -6,7 +6,7 @@ import { request, gql } from 'graphql-request';
 export const load: PageServerLoad = async () => {
 	const query = gql`
 		query Posts {
-			posts {
+			posts (orderBy: createdAt_DESC) {
 				id
 				publishedAt
 				slug
