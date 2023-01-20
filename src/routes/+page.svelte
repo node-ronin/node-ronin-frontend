@@ -7,6 +7,17 @@
 
 <svelte:head>
 	<title>Node Ronin</title>
+	<meta name="author" content="Node Ronin" />
+	<meta name="description" content="We are a group of blockchain enthusiasts who are dedicated to supporting the growth and development of the blockchain network. As a validator node, you will play an important role in maintaining the integrity and security of the network, and earn rewards for your participation." />
+
+	<meta property="og:description" content="We are a group of blockchain enthusiasts who are dedicated to supporting the growth and development of the blockchain network. As a validator node, you will play an important role in maintaining the integrity and security of the network, and earn rewards for your participation." />
+	<meta property="og:title" content="Node Ronin | Indonesia Node Validator Community" />
+	<meta property="og:image" content="/assets/Ethereum_Monochromatic.png" />
+	<meta property="og:url" content="https://noderonin.com" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Node Ronin | Indonesia Node Validator Community" />
+	<meta name="twitter:image" content="/assets/Ethereum_Monochromatic.png" />
+	<meta name="twitter:description" content="We are a group of blockchain enthusiasts who are dedicated to supporting the growth and development of the blockchain network. As a validator node, you will play an important role in maintaining the integrity and security of the network, and earn rewards for your participation." />
 </svelte:head>
 
 <Transition key="section-1">
